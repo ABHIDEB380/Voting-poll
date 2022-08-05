@@ -1,0 +1,29 @@
+.result {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15%;
+}
+
+.rank1 {
+    width: 350px;
+}
+
+.rank2 {
+    width: 350px;
+}
+
+.rank3 {
+    width: 350px;
+}
+
+h1 {
+    font-size: 28px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.description {
+    height: 111px;
+    width: 89%;
+    text-align: justify;
+}

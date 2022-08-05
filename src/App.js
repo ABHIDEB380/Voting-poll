@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Login from './Component/main/Login';
+import Poll from './Component/main/Poll';
+import Result from './Component/main/Result';
+import { useState } from 'react';
+import Header from './Component/main/Header';
+
 
 function App() {
+  
+  const [respond, setRespond]= useState('');
+  const [showHead, setShowHead] = useState(true);
+
+  function fetchSelected(data){
+    console.log("data that is fateched",data)
+    setRespond(data);
+  }
+  console.log("respond that is fateched",respond)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+    {showHead && <nav><Header/></nav>}
+      <Routes>
+        <Route path="/" element={<Login setShowHead={setShowHead}/> }/>
+        <Route path="/poll" element={<Poll fetchData={fetchSelected} setShowHead={setShowHead}/>} />
+        <Route path="/result" element={<Result result={respond} setShowHead={setShowHead}/>} />
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 

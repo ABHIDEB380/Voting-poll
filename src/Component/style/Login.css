@@ -1,0 +1,31 @@
+.login-card {
+    margin-left: 35%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 450px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input {
+    width: 50%;
+    height: 30px;
+    margin: 10px;
+}
+
+.login-button {
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(105, 202, 105);
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
